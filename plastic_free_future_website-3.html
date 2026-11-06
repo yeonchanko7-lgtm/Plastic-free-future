@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Plastic-Free Future helps students understand plastic bottle waste and discover simple ways to reduce it.">
+<title>Plastic-Free Future | Small Actions, Big Changes</title>
+<style>
+:root{--green:#176b4b;--green2:#2c9569;--mint:#e9f6ef;--blue:#dff2f7;--ink:#18332b;--muted:#5c7068;--white:#fff;--yellow:#f5c95b}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fbfdfb;line-height:1.65}
+header{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(10px);border-bottom:1px solid #e2eee7}
+.nav{max-width:1120px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{font-weight:800;color:var(--green);font-size:1.1rem;text-decoration:none;letter-spacing:.2px}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none;font-size:.92rem;font-weight:700}
+nav a:hover{color:var(--green2)}
+.hero{background:linear-gradient(120deg,#e8f6ee 0%,#e2f3f7 100%);overflow:hidden}
+.hero-inner{max-width:1120px;margin:auto;padding:76px 22px 70px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.eyebrow{display:inline-block;background:#d1eadb;color:var(--green);padding:6px 12px;border-radius:99px;font-weight:700;font-size:.8rem}
+h1{font-size:clamp(2.6rem,6vw,4.7rem);line-height:1.04;letter-spacing:-2px;margin:18px 0;color:#124b37}
+.hero p{font-size:1.1rem;max-width:570px;color:#46645a}
+.btn{display:inline-block;background:var(--green);color:white;padding:12px 19px;border-radius:9px;text-decoration:none;font-weight:700;border:0;cursor:pointer}
+.btn:hover{background:#0f5038}
+.hero-art{min-height:310px;border-radius:28px;background:linear-gradient(145deg,#b9e5d0,#9dd3e0);display:grid;place-items:center;position:relative;box-shadow:0 18px 45px #225c4020}
+.bottle{width:112px;height:225px;border:7px solid #f9ffff;border-radius:28px 28px 22px 22px;background:linear-gradient(90deg,#b5e4f0,#e7fbff,#9bd2e0);position:relative;transform:rotate(9deg);box-shadow:12px 15px 20px #245d5040}
+.bottle:before{content:"";position:absolute;width:48px;height:27px;top:-31px;left:25px;border:6px solid white;border-bottom:0;border-radius:8px 8px 0 0}
+.bottle:after{content:"REUSE";position:absolute;top:90px;left:17px;font-weight:900;color:#176b4b;letter-spacing:2px;font-size:15px;transform:rotate(-90deg)}
+.leaf{position:absolute;font-size:3rem}.leaf.one{left:14%;top:17%}.leaf.two{right:13%;bottom:16%}
+section{max-width:1120px;margin:auto;padding:68px 22px}
+.section-tag{color:var(--green2);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:.78rem}
+h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;margin:8px 0 14px;color:#164d39}
+.intro{max-width:720px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.card{background:white;border:1px solid #e1eee6;border-radius:18px;padding:23px;box-shadow:0 8px 25px #194c3210}
+.card .emoji{font-size:2rem}.card h3{margin:8px 0;color:var(--green)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.panel{background:var(--mint);padding:28px;border-radius:20px}
+.panel.blue{background:var(--blue)}
+ul{padding-left:22px}
+.fact{font-size:2.2rem;font-weight:900;color:var(--green);line-height:1.1}
+.steps{counter-reset:step;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.step{background:white;border:1px solid #e1eee6;border-radius:16px;padding:20px}
+.step:before{counter-increment:step;content:counter(step);display:grid;place-items:center;background:var(--green);color:white;width:34px;height:34px;border-radius:50%;font-weight:800;margin-bottom:12px}
+.quiz{background:#164d39;color:white;border-radius:22px;padding:30px;margin-top:24px}
+.quiz h3{font-size:1.5rem;margin-top:0}
+.quiz button.option{display:block;width:100%;text-align:left;margin:9px 0;padding:12px 14px;border:1px solid #b7d9c8;background:#ffffff;color:#18332b;border-radius:10px;cursor:pointer;font-size:1rem}
+.quiz button.option:hover{background:#e9f6ef}
+#quiz-result{font-weight:700;min-height:28px;margin-top:12px}
+footer{background:#103e2e;color:#e9f6ef;padding:30px 22px;text-align:center}
+footer p{margin:5px}
+.small{font-size:.88rem;color:var(--muted)}
+@media(max-width:760px){.hero-inner,.split{grid-template-columns:1fr}.hero-inner{padding-top:48px}.hero-art{min-height:240px}.cards,.steps{grid-template-columns:1fr}nav{gap:10px}.nav{align-items:flex-start;flex-direction:column}section{padding:50px 20px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="nav">
+  <a class="brand" href="#home">🌿 PLASTIC-FREE FUTURE</a>
+  <nav aria-label="Main navigation">
+   <a href="#problem">The Problem</a><a href="#impact">Impacts</a><a href="#solutions">Solutions</a><a href="#quiz">Quick Quiz</a>
+  </nav>
+ </div>
+</header>
+<main>
+ <div class="hero" id="home">
+  <div class="hero-inner">
+   <div>
+    <span class="eyebrow">LEARN • REDUCE • REUSE • RECYCLE</span>
+    <h1>Say no to plastic waste.</h1>
+    <p>Plastic bottles are useful, but using them once and throwing them away creates waste. Learn why it matters and discover small actions that can make a difference.</p>
+    <a class="btn" href="#solutions">Discover simple solutions ↓</a>
+   </div>
+   <div class="hero-art" role="img" aria-label="Illustration of a reusable water bottle with leaves">
+    <span class="leaf one">🌱</span><div class="bottle"></div><span class="leaf two">🍃</span>
+   </div>
+  </div>
+ </div>
+
+ <section id="problem">
+  <span class="section-tag">01 / Understand the issue</span>
+  <h2>What is plastic bottle waste?</h2>
+  <p class="intro">Plastic bottle waste is made when bottles are thrown away instead of being reused or correctly recycled. Plastic does not disappear quickly. If waste is not managed properly, it can build up on land and in waterways.</p>
+  <div class="cards">
+   <article class="card"><div class="emoji">🧴</div><h3>Single-use bottles</h3><p>Some bottles are used for only a short time before being thrown away.</p></article>
+   <article class="card"><div class="emoji">🗑️</div><h3>Too much waste</h3><p>When many bottles are discarded, they add to the amount of rubbish that communities must manage.</p></article>
+   <article class="card"><div class="emoji">🌊</div><h3>Pollution</h3><p>Bottles that are littered can be carried by wind and rain into drains, rivers, and the ocean.</p></article>
+  </div>
+ </section>
+
+ <section id="impact">
+  <span class="section-tag">02 / Why it matters</span>
+  <h2>How can plastic waste affect nature?</h2>
+  <div class="split">
+   <div class="panel">
+    <div class="fact">Land + water</div>
+    <p>Plastic litter can make places dirty, block drains, and travel from streets into rivers and seas.</p>
+   </div>
+   <div>
+    <h3>Wildlife and habitats</h3>
+    <p>Animals can become trapped in plastic waste or mistake small plastic pieces for food. This can harm wildlife and disturb natural habitats.</p>
+    <h3>People and communities</h3>
+    <p>Polluted public spaces are unpleasant and can create extra work and costs for communities that need to collect and manage rubbish.</p>
+   </div>
+  </div>
+ </section>
+
+ <section id="solutions">
+  <span class="section-tag">03 / Take action</span>
+  <h2>Small actions, big changes</h2>
+  <p class="intro">You do not have to do everything at once. Start with one practical habit and keep doing it.</p>
+  <div class="steps">
+   <article class="step"><h3>Reduce</h3><p>Choose a reusable bottle when it is safe and practical. Avoid buying a new single-use bottle when you do not need one.</p></article>
+   <article class="step"><h3>Reuse</h3><p>Use a suitable reusable bottle and clean it regularly. Follow the care instructions for the bottle.</p></article>
+   <article class="step"><h3>Recycle</h3><p>Check your local recycling rules. Empty the bottle and sort it correctly where bottle recycling is available.</p></article>
+  </div>
+  <div class="panel blue" style="margin-top:22px">
+   <h3>Try this one-week challenge</h3>
+   <p>For one week, notice when you use a disposable plastic bottle. When possible, choose a reusable option and learn where recycling is available in your area.</p>
+  </div>
+ </section>
+
+ <section id="quiz">
+  <span class="section-tag">04 / Check what you learned</span>
+  <h2>Quick knowledge check</h2>
+  <div class="quiz">
+   <h3>Which action can help reduce single-use plastic bottle waste?</h3>
+   <button class="option" onclick="answer(false)">A. Throw bottles on the ground</button>
+   <button class="option" onclick="answer(true)">B. Use a suitable reusable bottle</button>
+   <button class="option" onclick="answer(false)">C. Buy a new bottle every time</button>
+   <p id="quiz-result" aria-live="polite"></p>
+  </div>
+ </section>
+
+ <section>
+  <span class="section-tag">Remember</span>
+  <h2>Be part of the change.</h2>
+  <p class="intro">A cleaner environment starts with informed choices. Reduce what you can, reuse items safely, and recycle according to local rules.</p>
+  <p class="small"><strong>Research note:</strong> Before submitting this school project, add the exact sources you used for any facts or statistics. Useful starting points include the United Nations Environment Programme and your local waste-management authority.</p>
+ </section>
+</main>
+<footer>
+ <p><strong>🌿 Plastic-Free Future</strong></p>
+ <p>Small Actions, Big Changes.</p>
+ <p class="small" style="color:#c9e4d5">An educational student website about reducing plastic bottle waste.</p>
+</footer>
+<script>
+function answer(correct){
+ const result=document.getElementById('quiz-result');
+ result.textContent=correct ? 'Correct! Reusable bottles can help reduce single-use bottle waste.' : 'Not quite. Try again! Think about which choice avoids using a new disposable bottle.';
+}
+</script>
+</body>
+</html>
